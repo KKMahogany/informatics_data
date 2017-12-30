@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
     initialiseGenerator(seed);
 
     vector<edge> e;
-    for(int i = 1; i < V-1; i++) {
+    for(int i = 1; i <= V-1; i++) {
         e.emplace_back(i, i+1);
     }
     printData(V, e);
