@@ -1,0 +1,71 @@
+** Longest path in dag data!
+** Let V be the number of vertices and E be the number of directed edges.
+** Vertices are labelled 1..V, with 1 being the start and V being the end
+**
+** Test cases will be restricted so that:
+** - Edges are UNDIRECTED
+** - Graph is SIMPLE (no multiedges)
+** - 1 <= V <= MAX_V and 1 <= E <= MAX_E
+** - 1 and V are DEFINITELY connected
+** - 1, 2, 3, ..., N is a valid top sort of the vertices
+**
+** Test cases will be written out in the form:
+** <BRIEF_DESCRIPTION_OF_WHAT_THE_TEST_CASE_BREAKS>
+** ------------------------------------------------
+** <NOTES_ON_PURPOSE_OF_TESTCASE>
+**
+** Construction: <EXPLICIT_DESCRIPTION_OF_CONSTRUCTION_IF_REQUIRED>
+
+---
+----
+CORE TESTCASES
+----
+---
+These testcases exist to break a particular thingy
+
+Min case 1
+----------
+1 vertex
+
+
+Min case 2
+----------
+2 vertices, connected by an edge
+
+Isolated vertex
+---------------
+1     2 --> 3     4
+
+Break move closest
+------------------
+Break the solution which greedily constructs a path by taking the edge which leads to
+a vertex with smallest index
+MAX_V/2 vertices, each one has two random outgoing edges, that go up to 20 vertices ahead
+
+Break random DFS
+----------------
+Run a series of random DFSs, and pick the best.
+
+
+X    A    B    C    D    Y
+
+Have an edge from:
+X --> A, X --> B, C --> D, D --> Y
+Randomly choose either:
+A --> C, B --> D
+OR
+A --> D, B --> C
+
+Have as many concatentations as possible of the above construction.
+
+All in a line
+-------------
+Break solutions that try some kind of O(N) approach, starting at each vertex.
+
+Max out-degree
+--------------
+Vertex 1 joins to everything else, to break solutions that 
+
+Max in-degree
+-------------
+Everything joins to vertex N
